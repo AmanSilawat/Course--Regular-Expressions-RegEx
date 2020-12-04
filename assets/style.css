@@ -1,0 +1,79 @@
+body {
+    font-family: arial;
+    color: #333;
+}
+h1 {
+    font-weight: normal;
+    margin: 20px auto;
+    text-align: center;
+}
+form {
+    width: 500px;
+    margin: 20px auto;
+}
+input {
+    display: block;
+    padding: 8px 16px;
+    font-size: 2em;
+    margin: 10px auto;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 3px solid #ccc;
+    outline: none !important;
+}
+
+input.valid {
+    border-color: #3cbc3c;
+}
+
+input.invalid {
+    border-color: #d32323;
+}
+
+.field {
+    position: relative;
+}
+
+input + p {
+    font-family: arial;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    opacity: 1;
+    background-color: rgb(255 251 129);
+    box-shadow: 2px 3px 6px 0px #0000004a;
+    border: 1px solid #cdcdcd;
+    border-radius: 5px;
+    position: absolute;
+    width: 90%;
+    padding: 10px;
+    z-index: 10;
+    letter-spacing: 0.5px;
+    top: calc(100% + 8px);
+    left: 10%;
+    margin: 0px;
+    box-sizing: border-box;
+    opacity: 0;
+    visibility: hidden;
+}
+
+input + p:before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 10px;
+
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+
+    border-bottom: 8px solid #fffb81;
+}
+
+input.invalid:focus + p {
+    opacity: 1;
+    visibility: visible;
+}
